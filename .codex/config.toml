@@ -1,3 +1,9 @@
+[features]
+hooks = true
+
 [[hooks.SessionStart]]
-command = "cmd"
-args = ["/c", "echo just simple hook"]
+matcher = "startup|resume"
+
+[[hooks.SessionStart.hooks]]
+type = "command"
+command = "echo just simple hook"
